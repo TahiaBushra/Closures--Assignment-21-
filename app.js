@@ -52,3 +52,16 @@
 // const doMath = (a) => (b) => (c) => (d) => (e) => a + b + c + d + e;
 // const result = doMath(15)(9)(7)(3)(8);
 // console.log(result);
+
+// Side Effect
+function foodCutter(quantity) {
+    return quantity * 4;
+};
+function addFlavour(pieces, fl) { //addFlavour call pieces function so side effect 1
+    return pieces * fl;
+};
+function foodBlender(quantity, fl) {  //foodBlender call 2 functions so side effect 2
+    const pieces = foodCutter(quantity);
+    return addFlavour(pieces, fl);
+}
+console.log(foodBlender(12, 5));
