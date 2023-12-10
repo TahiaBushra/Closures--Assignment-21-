@@ -54,14 +54,31 @@
 // console.log(result);
 
 // Side Effect
-function foodCutter(quantity) {
-    return quantity * 4;
+// function foodCutter(quantity) {
+//     return quantity * 4;
+// };
+// function addFlavour(pieces, fl) { //addFlavour call pieces function so side effect 1
+//     return pieces * fl;
+// };
+// function foodBlender(quantity, fl) {  //foodBlender call 2 functions so side effect 2
+//     const pieces = foodCutter(quantity);
+//     return addFlavour(pieces, fl);
+// }
+// console.log(foodBlender(12, 5));
+
+// Call()
+// function greet(greeting) {
+//     return `${greeting} , ${this.name}`;
+// };
+// const person1 = { name: "Mimi" };
+// const text = greet.call(person1, "Assalamualaikum");
+// console.log(text);
+
+// Apply
+function greet(greeting, message) {
+    return `${greeting} , ${this.name} . ${message}`;
 };
-function addFlavour(pieces, fl) { //addFlavour call pieces function so side effect 1
-    return pieces * fl;
-};
-function foodBlender(quantity, fl) {  //foodBlender call 2 functions so side effect 2
-    const pieces = foodCutter(quantity);
-    return addFlavour(pieces, fl);
-}
-console.log(foodBlender(12, 5));
+const person2 = { name: "Lili" };
+const args = ["Assalamualaikum", "How are you ?"];
+const text = greet.apply(person2, args);
+console.log(text);
