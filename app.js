@@ -74,11 +74,21 @@
 // const text = greet.call(person1, "Assalamualaikum");
 // console.log(text);
 
-// Apply
-function greet(greeting, message) {
-    return `${greeting} , ${this.name} . ${message}`;
+// //Apply
+// function greet(greeting, message) {
+//     return `${greeting} , ${this.name} . ${message}`;
+// };
+// const person2 = { name: "Lili" };
+// const args = ["Assalamualaikum", "How are you ?"];
+// const text = greet.apply(person2, args);
+// console.log(text);
+
+// Bind
+function calcAge(greeting) {
+    return `${greeting} , ${this.name} . You are ${2023 - this.birthYear} year old.`;
 };
-const person2 = { name: "Lili" };
-const args = ["Assalamualaikum", "How are you ?"];
-const text = greet.apply(person2, args);
-console.log(text);
+const human1 = { name: "Mimi", birthYear: 2000 };
+const human2 = { name: "Lili", birthYear: 2010 };
+
+const calcHumanAge = calcAge.bind(human2);
+console.log(calcHumanAge("Assalamualaikum"));
