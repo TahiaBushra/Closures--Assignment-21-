@@ -1,4 +1,4 @@
-"use strict"
+// "use strict"
 
 // Default Parameters
 // function sum(a, b = 10) { //If we set value in parameters then it calls default parameters
@@ -83,12 +83,29 @@
 // const text = greet.apply(person2, args);
 // console.log(text);
 
-// Bind
-function calcAge(greeting) {
-    return `${greeting} , ${this.name} . You are ${2023 - this.birthYear} year old.`;
-};
-const human1 = { name: "Mimi", birthYear: 2000 };
-const human2 = { name: "Lili", birthYear: 2010 };
+// // Bind
+// function calcAge(greeting) {
+//     return `${greeting} , ${this.name} . You are ${2023 - this.birthYear} year old.`;
+// };
+// const human1 = { name: "Mimi", birthYear: 2000 };
+// const human2 = { name: "Lili", birthYear: 2010 };
 
-const calcHumanAge = calcAge.bind(human2);
-console.log(calcHumanAge("Assalamualaikum"));
+// const calcHumanAge = calcAge.bind(human2);
+// console.log(calcHumanAge("Assalamualaikum"));
+
+// // IIFE : To call a function directly and for one time.
+// (function () {
+//     const secret = "Assalamualaikum";
+//     console.log(secret);
+// })();
+
+// Closures
+function outerFunction() {
+    const myFavNum = 14;
+    function innerFunction() {
+        return myFavNum;
+    };
+    return innerFunction;
+};
+const myFunction = outerFunction();
+console.log(myFunction());
