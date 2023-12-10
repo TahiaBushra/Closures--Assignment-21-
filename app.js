@@ -38,3 +38,17 @@
 // greet.addEventListener("mouseover", callBack);
 
 // Curriying Function
+// function doMath(a) {
+//     return function (b) {
+//         return function (c) {
+//             return function (d) {
+//                 return function (e) {
+//                     return a + b + c + d + e;
+//                 }
+//             }
+//         }
+//     }
+// };
+// const doMath = (a) => (b) => (c) => (d) => (e) => a + b + c + d + e;
+// const result = doMath(15)(9)(7)(3)(8);
+// console.log(result);
